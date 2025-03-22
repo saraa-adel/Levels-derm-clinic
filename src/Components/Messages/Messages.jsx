@@ -79,8 +79,8 @@ export default function Messages() {
                         <i className="fa-solid fa-trash-can fs-5"></i>
                     </button>
                 </div>
-                <p><span className='fw-medium'>Name: </span><span className='text-capitalize'>sara adel</span></p>
-                <p className='py-2'><span className='fw-medium'>Phone: </span><span>0102938334</span></p>
+                <p><span className='fw-medium'>Name: </span><span className='text-capitalize'>{message.name}</span></p>
+                <p className='py-2'><span className='fw-medium'>Phone: </span><span>{message.phone}</span></p>
                 <div className="d-flex">
                     <p className='fw-medium'>Services:</p>
                     <ul>

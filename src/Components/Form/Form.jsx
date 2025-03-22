@@ -126,7 +126,7 @@ export default function Form() {
     // validation
     let validationSchema = yup.object({
         name: yup.string().required(lang === 'ar' ? 'الاسم مطلوب' : 'Name is required').min(3, lang === 'ar' ? 'الحد الأدنى 3 أحرف' : 'Minimum length is 3').max(30, lang === 'ar' ? 'الحد الأقصى 30 أحرف' : 'Maximum length is 10'),
-        phone: yup.string().required(lang === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone is required').matches(/^01[0125][0-9]{8}$/, lang === 'ar' ? 'يجب إدخال رقم هاتف مصري صحيح' : 'We need an Egyptian number'),
+        phone: yup.string().required(lang === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone is required').matches(/^(?:\+966|0)?5[0-9]{8}$/, lang === 'ar' ? 'يجب إدخال رقم هاتف سعودي صحيح' : 'We need an Saudi number'),
         services: servicesAr.length === 0 && servicesEn.length === 0 ? yup.array(): yup.array().required('Services is required').min(1, lang==='ar'? "يرجى اختيار خدمة واحدة على الأقل" : "Please select at least one service")
     })
   
