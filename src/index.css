@@ -127,6 +127,11 @@ a:hover .text-hover{
     transition: 0.4s;
 
 }
+.dashboard .container-lg .nav-tabs .nav-link.nav-link:focus,
+.dashboard .container-lg .nav-tabs .nav-link.active,
+.dashboard .container-lg .nav-tabs .nav-link:hover{
+  color: var(--main-color) !important;
+}
 .dashboard .container-lg .nav-tabs .nav-link.nav-link:focus::after,
 .dashboard .container-lg .nav-tabs .nav-link.active::after,
 .dashboard .container-lg .nav-tabs .nav-link:hover::after{
@@ -134,5 +139,23 @@ a:hover .text-hover{
 }
 
 .border-endd{
-  border-right: 2px solid #ADB5BD;
+  border-right: 1px solid #ADB5BD;
+  border-bottom: 0;
+  height: 100%;
+}
+
+.social .form-control + i {
+  transition: 0.3s;
+}
+
+.social .form-control:focus + i {
+  color: var(--main-color) !important;
+}
+
+@media (max-width: 576px) {
+  .border-endd{
+    border-right: 0;
+    border-bottom: 1px solid #ADB5BD;
+    height: auto;
+  }
 }

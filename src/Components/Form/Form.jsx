@@ -7,6 +7,7 @@ import axios from 'axios'
 import * as yup from 'yup'
 import { useFormik } from 'formik'
 import toast, { Toaster } from 'react-hot-toast';
+import BeatLoader from 'react-spinners/BeatLoader'
 
 
 export default function Form() {
@@ -29,53 +30,53 @@ export default function Form() {
         }
     }
 
-    const optionsAr = [
-        { value: 'الترافورمر ( هايفو لشد الوجه )', label: 'الترافورمر ( هايفو لشد الوجه )' },
-        { value: 'تنظيف البشرة وخدمات الهيدرافيشيال', label: 'تنظيف البشرة وخدمات الهيدرافيشيال' },
-        { value: 'الديرمابن', label: 'الديرمابن' },
-        { value: 'حقن الفيلر', label: 'حقن الفيلر' },
-        { value: 'محفزات الكولاجين', label: 'الديرمابن' },
-        { value: 'الفراكشنال', label: 'الفراكشنال' },
-        { value: 'التجميل النسائي', label: 'التجميل النسائي' },
-        { value: 'الليزر', label: 'الليزر' },
-        { value: 'جلسات التشقير', label: 'جلسات التشقير' },
-        { value: 'الليزر الكربوني', label: 'الليزر الكربوني' },
-        { value: 'إزلة تاتو ونمش ووحمات', label: 'إزلة تاتو ونمش ووحمات' },
-        { value: 'أبر البوتكس', label: 'أبر البوتكس' },
-        { value: 'المورفيس وسكارليت ', label: 'المورفيس وسكارليت ' },
-        { value: 'إبر النضارة', label: 'إبر النضارة' },
-        { value: 'البلازما والخلايا الجذعيه', label: 'البلازما والخلايا الجذعيه' },
-        { value: 'التقشير البارد', label: 'التقشير البارد' },
-        { value: 'الخيوط', label: 'الخيوط' },
-        { value: 'إزالة ثأليل', label: 'إزالة ثأليل' },
-        { value: 'باقات ليفلز المميزة', label: 'باقات ليفلز المميزة' },
-        { value: 'العروض', label: 'العروض' },
-        { value: 'هدايا اليوم', label: 'هدايا اليوم' },
-    ]
+    // const optionsAr = [
+    //     { value: 'الترافورمر ( هايفو لشد الوجه )', label: 'الترافورمر ( هايفو لشد الوجه )' },
+    //     { value: 'تنظيف البشرة وخدمات الهيدرافيشيال', label: 'تنظيف البشرة وخدمات الهيدرافيشيال' },
+    //     { value: 'الديرمابن', label: 'الديرمابن' },
+    //     { value: 'حقن الفيلر', label: 'حقن الفيلر' },
+    //     { value: 'محفزات الكولاجين', label: 'الديرمابن' },
+    //     { value: 'الفراكشنال', label: 'الفراكشنال' },
+    //     { value: 'التجميل النسائي', label: 'التجميل النسائي' },
+    //     { value: 'الليزر', label: 'الليزر' },
+    //     { value: 'جلسات التشقير', label: 'جلسات التشقير' },
+    //     { value: 'الليزر الكربوني', label: 'الليزر الكربوني' },
+    //     { value: 'إزلة تاتو ونمش ووحمات', label: 'إزلة تاتو ونمش ووحمات' },
+    //     { value: 'أبر البوتكس', label: 'أبر البوتكس' },
+    //     { value: 'المورفيس وسكارليت ', label: 'المورفيس وسكارليت ' },
+    //     { value: 'إبر النضارة', label: 'إبر النضارة' },
+    //     { value: 'البلازما والخلايا الجذعيه', label: 'البلازما والخلايا الجذعيه' },
+    //     { value: 'التقشير البارد', label: 'التقشير البارد' },
+    //     { value: 'الخيوط', label: 'الخيوط' },
+    //     { value: 'إزالة ثأليل', label: 'إزالة ثأليل' },
+    //     { value: 'باقات ليفلز المميزة', label: 'باقات ليفلز المميزة' },
+    //     { value: 'العروض', label: 'العروض' },
+    //     { value: 'هدايا اليوم', label: 'هدايا اليوم' },
+    // ]
 
-    const optionsEn = [
-        { value: 'Ultrformer (HIFU Face Lifting)', label: 'Ultrformer (HIFU Face Lifting)' },
-        { value: 'Skin Cleansing & Hydrafacial Services', label: 'Skin Cleansing & Hydrafacial Services' },
-        { value: 'Dermapen', label: 'Dermapen' },
-        { value: 'Filler Injections', label: 'Filler Injections' },
-        { value: 'Collagen Stimulators', label: 'Collagen Stimulators' },
-        { value: 'Fractional Laser', label: 'Fractional Laser' },
-        { value: 'Female Aesthetic Treatments', label: 'Female Aesthetic Treatments' },
-        { value: 'Laser', label: 'Laser' },
-        { value: 'Bleaching Sessions', label: 'Bleaching Sessions' },
-        { value: 'Carbon Laser', label: 'Carbon Laser' },
-        { value: 'Tattoo, Freckles & Birthmark Removal', label: 'Tattoo, Freckles & Birthmark Removal' },
-        { value: 'Botox Injections', label: 'Botox Injections' },
-        { value: 'Morpheus & Scarlet', label: 'Morpheus & Scarlet' },
-        { value: 'Mesotherapy Injections', label: 'Mesotherapy Injections' },
-        { value: 'Plasma & Stem Cells', label: 'Plasma & Stem Cells' },
-        { value: 'Cold Peeling', label: 'Cold Peeling' },
-        { value: 'Threads', label: 'Threads' },
-        { value: 'Wart Removal', label: 'Wart Removal' },
-        { value: 'Exclusive Levels Packages', label: 'Exclusive Levels Packages' },
-        { value: 'Offers', label: 'Offers' },
-        { value: 'Today’s Gifts', label: 'Today’s Gifts' },
-    ]
+    // const optionsEn = [
+    //     { value: 'Ultrformer (HIFU Face Lifting)', label: 'Ultrformer (HIFU Face Lifting)' },
+    //     { value: 'Skin Cleansing & Hydrafacial Services', label: 'Skin Cleansing & Hydrafacial Services' },
+    //     { value: 'Dermapen', label: 'Dermapen' },
+    //     { value: 'Filler Injections', label: 'Filler Injections' },
+    //     { value: 'Collagen Stimulators', label: 'Collagen Stimulators' },
+    //     { value: 'Fractional Laser', label: 'Fractional Laser' },
+    //     { value: 'Female Aesthetic Treatments', label: 'Female Aesthetic Treatments' },
+    //     { value: 'Laser', label: 'Laser' },
+    //     { value: 'Bleaching Sessions', label: 'Bleaching Sessions' },
+    //     { value: 'Carbon Laser', label: 'Carbon Laser' },
+    //     { value: 'Tattoo, Freckles & Birthmark Removal', label: 'Tattoo, Freckles & Birthmark Removal' },
+    //     { value: 'Botox Injections', label: 'Botox Injections' },
+    //     { value: 'Morpheus & Scarlet', label: 'Morpheus & Scarlet' },
+    //     { value: 'Mesotherapy Injections', label: 'Mesotherapy Injections' },
+    //     { value: 'Plasma & Stem Cells', label: 'Plasma & Stem Cells' },
+    //     { value: 'Cold Peeling', label: 'Cold Peeling' },
+    //     { value: 'Threads', label: 'Threads' },
+    //     { value: 'Wart Removal', label: 'Wart Removal' },
+    //     { value: 'Exclusive Levels Packages', label: 'Exclusive Levels Packages' },
+    //     { value: 'Offers', label: 'Offers' },
+    //     { value: 'Today’s Gifts', label: 'Today’s Gifts' },
+    // ]
 
     // get social media
     const getSociaMedia = async() => {
@@ -99,14 +100,13 @@ export default function Form() {
     useEffect(() => {
         getSociaMedia()
         getServices()
+        localStorage.removeItem("adminToken")
     },[])
 
 
     // form send
     const messageSend = async(values ,{resetForm}) =>{
-        setLoadingBtn(true)
-        console.log(values);
-        
+        setLoadingBtn(true)        
         let {data} = await axios.post(`${BASE_URL}/api/messages`, values,
             {
                 headers: {
@@ -127,7 +127,7 @@ export default function Form() {
     let validationSchema = yup.object({
         name: yup.string().required(lang === 'ar' ? 'الاسم مطلوب' : 'Name is required').min(3, lang === 'ar' ? 'الحد الأدنى 3 أحرف' : 'Minimum length is 3').max(30, lang === 'ar' ? 'الحد الأقصى 30 أحرف' : 'Maximum length is 10'),
         phone: yup.string().required(lang === 'ar' ? 'رقم الهاتف مطلوب' : 'Phone is required').matches(/^01[0125][0-9]{8}$/, lang === 'ar' ? 'يجب إدخال رقم هاتف مصري صحيح' : 'We need an Egyptian number'),
-        services: yup.array().required('Services is required').min(1, lang==='ar'? "يرجى اختيار خدمة واحدة على الأقل" : "Please select at least one service")
+        services: servicesAr.length === 0 && servicesEn.length === 0 ? yup.array(): yup.array().required('Services is required').min(1, lang==='ar'? "يرجى اختيار خدمة واحدة على الأقل" : "Please select at least one service")
     })
   
     let formik = useFormik({
@@ -143,13 +143,21 @@ export default function Form() {
   return <>
 
     {/* loading */}
-    {loading? <div className="bg-warning position-absolute top-0 bottom-0 start-0 end-0"></div>
+    {loading?  <div className='bg-white position-absolute top-0 bottom-0 vh-100 end-0 start-0 d-flex justify-content-center align-items-center z-3'>
+        <BeatLoader
+        color='#D4AD62'
+        loading={loading}
+        size={30}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    </div>
     :<>
       {/* navbar */}
     <nav className={`navbar bg-white py-0 shadow-sm ${lang==='ar'? 'roboto':'cairo'} position-sticky top-0 start-0 end-0 z-3`}>
         <div className="container-lg px-5 vh-12">
             <div className="navbar-brand h-100">
-                <img className='w-100 h-100' src={logo} alt="Levels Derm Clinic" />
+                <img loading='lazy' className='w-100 h-100' src={logo} alt="Levels Derm Clinic" />
             </div>
             <button onClick={langSwitch} className='btn btn-main rounded-1 lh-sm'>{lang==='ar'? 'En':'عر'}</button>
         </div>
@@ -214,7 +222,7 @@ export default function Form() {
                             </button>
                             :<button disabled={!(formik.isValid && formik.dirty)} type='submit' className='btn btn-main position-absolute bottom-0'>{lang==='ar'? 'إرسال':'Send'}</button>
                             }
-                            <button className='btn mt-4 opacity-0'></button> 
+                            <button type='button' className='btn mt-4 opacity-0'></button> 
                             <Toaster />
                         </form>
                     </div>

@@ -6,13 +6,15 @@ import Login from './Components/Login/Login.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import ProtectedRoute from './Components/Context/ProtectedRoute.js';
 import Logout from './Components/Context/Logout.js';
+import NotFound from './Components/NotFound/NotFound.jsx';
 
 export default function App() {
 
   let routers = createBrowserRouter([
     {index: true ,element: <Form />},
     {path: 'login' ,element: <Logout><Login /></Logout>},
-    {path: 'dashboard' ,element: <ProtectedRoute><Dashboard /></ProtectedRoute>}
+    {path: 'dashboard' ,element: <ProtectedRoute><Dashboard /></ProtectedRoute>},
+    {path: '*' ,element: <NotFound />}
   ])
 
 

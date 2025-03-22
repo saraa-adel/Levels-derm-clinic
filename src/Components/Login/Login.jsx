@@ -1,22 +1,27 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import logo from '../../assets/images/logo.png'
 import videoBackground from '../../assets/images/Reel02.mp4'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { AdminToken } from '../Context/AdminToken.js'
 
 export default function Login() {
 
     const [loading, setLoading] = useState(false)
+    const [apiError, setApiError] = useState(false)
     let {setAdminToken} = useContext(AdminToken)
     let navigate = useNavigate()
 
     async function loginSubmit(values){
         setLoading(true)
        let {data} = await axios.post('https://levelsodermclinic.up.railway.app/api/login',values)
+       .catch((err)=>{
+        setApiError(err.response.data.error)
+        setLoading(false)
+       })
        if (data.token){
         setLoading(false)
         localStorage.setItem('adminToken', data.token)
@@ -53,7 +58,7 @@ export default function Login() {
                     <div className='row justify-content-center text-center px-sm-5 px-2 bg-white shadow rounded-1 py-5'>
                         <div className='col-lg-3 col-sm-4 col-6'>
                             <div>
-                                <img className='w-100' src={logo} alt="logo" />
+                                <img loading='lazy' className='w-100' src={logo} alt="logo" />
                             </div>    
                         </div>    
                         <div className='col-12'>
@@ -62,6 +67,7 @@ export default function Login() {
                                 <p className='text-body-tertiary'></p>
                             </div>
                             <form onSubmit={formik.handleSubmit} className='mt-4'>
+                                {apiError ?<div className="alert alert-danger">{apiError}</div>:''} 
                                 <div className="position-relative">
                                     <input onBlur={formik.handleBlur} onChange={formik.handleChange} id="email" type="email" placeholder="Enter your email" name="email" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
                                     <i className="fa fa-envelope position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
@@ -76,10 +82,9 @@ export default function Login() {
 
                                 {loading? <button type='button' className='btn btn-main'>
                                     <i className='fas fa-spinner fa-spin'></i>
-                                    </button>
-                                    :<button disabled={!(formik.isValid && formik.dirty)} type='submit' className='btn btn-main'>Login</button>
-                                    }
-                                    <button className='btn mt-4 opacity-0'></button> 
+                                </button>
+                                :<button disabled={!(formik.isValid && formik.dirty)} type='submit' className='btn btn-main'>Login</button>
+                                }
                             </form>
                         </div>                
                     </div>                    
