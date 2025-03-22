@@ -30,6 +30,10 @@
   z-index: -999;
 }
 
+.navbar-brand img {
+  max-height: 11vh;
+}
+
 .bg-black-60{
   background-color: rgba(0, 0, 0, 0.6);
 }
