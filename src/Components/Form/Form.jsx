@@ -157,7 +157,7 @@ export default function Form() {
     <nav className={`navbar bg-white py-0 shadow-sm ${lang==='ar'? 'roboto':'cairo'} position-sticky top-0 start-0 end-0 z-3`}>
         <div className="container-lg px-5 vh-12">
             <div className="navbar-brand">
-                <img loading='lazy' className='w-100' src={logo} alt="Levels Derm Clinic" />
+                <img loading='lazy' src={logo} alt="Levels Der /m Clinic" />
             </div>
             <button onClick={langSwitch} className='btn btn-main rounded-1 lh-sm'>{lang==='ar'? 'En':'عر'}</button>
         </div>

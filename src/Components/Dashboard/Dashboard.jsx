@@ -28,7 +28,7 @@ export default function Dashboard() {
         <nav className={`navbar bg-white py-0 shadow-sm roboto position-sticky top-0 start-0 end-0 z-3`}>
         <div className="container-lg px-5 vh-12">
             <div className="navbar-brand h-100">
-            <img loading='lazy' className='w-100 h-100' src={logo} alt="Levels Der /m Clinic" />
+            <img loading='lazy' src={logo} alt="Levels Der /m Clinic" />
             </div>
             <button onClick={logOut} className='btn btn-main rounded-1 lh-sm'>
                 <i className="fa-solid fa-arrow-right-from-bracket me-2"></i>
