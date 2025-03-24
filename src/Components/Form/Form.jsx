@@ -180,7 +180,7 @@ export default function Form() {
                     </div>
                 </div>
             <div className={`w-100 d-flex align-items-center ${lang==='ar'? 'justify-content-sm-start justify-content-center flex-row-reverse':'justify-content-sm-end justify-content-center flex-row'} pt-sm-3 pt-4`}>
-                <Link className='text-decoration-none' target='_blank' to={`https://wa.me/${socialMedia.facebook}`}><i className="fa-brands fa-whatsapp whatsapp scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
+                <Link className='text-decoration-none' target='_blank' to={`https://wa.me/966${socialMedia.facebook}`}><i className="fa-brands fa-whatsapp whatsapp scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
                 <Link className='text-decoration-none' target='_blank' to={socialMedia.tiktok}><i className="fa-brands fa-tiktok tiktok scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
                 <Link className='text-decoration-none' target='_blank' to={socialMedia.instagram}><i className="fa-brands fa-instagram instagram scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
                 <Link className='text-decoration-none' target='_blank' to={socialMedia.twitter}><i className="fa-brands fa-snapchat text-black scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
