@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Helmet } from 'react-helmet-async'
 import logo from '../../assets/images/levels_derm_logo.png'
 import { AdminToken } from '../Context/AdminToken.js'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Messages from '../Messages/Messages.jsx'
 import Services from '../Services/Services.jsx'
 import SocialMedia from '../SocialMedia/SocialMedia.jsx'
@@ -27,9 +27,9 @@ export default function Dashboard() {
     {/* navbar */}
         <nav className={`navbar bg-white py-0 shadow-sm roboto position-sticky top-0 start-0 end-0 z-3`}>
         <div className="container-lg px-5 vh-12">
-            <div className="navbar-brand h-100">
-            <img loading='lazy' src={logo} alt="Levels Der /m Clinic" />
-            </div>
+            <Link to={'/'} className="navbar-brand h-100">
+                <img loading='lazy' src={logo} alt="Levels Der /m Clinic" />
+            </Link>
             <button onClick={logOut} className='btn btn-main rounded-1 lh-sm'>
                 <i className="fa-solid fa-arrow-right-from-bracket me-2"></i>
                 <span>Logout</span>

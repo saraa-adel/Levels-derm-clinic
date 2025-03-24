@@ -8,7 +8,7 @@ import * as yup from 'yup'
 import { useFormik } from 'formik'
 import toast, { Toaster } from 'react-hot-toast';
 import BeatLoader from 'react-spinners/BeatLoader'
-
+import linktree from '../../assets/images/linktree-logo-icon.svg'
 
 export default function Form() {
 
@@ -29,54 +29,6 @@ export default function Form() {
             setLang('ar')
         }
     }
-
-    // const optionsAr = [
-    //     { value: 'الترافورمر ( هايفو لشد الوجه )', label: 'الترافورمر ( هايفو لشد الوجه )' },
-    //     { value: 'تنظيف البشرة وخدمات الهيدرافيشيال', label: 'تنظيف البشرة وخدمات الهيدرافيشيال' },
-    //     { value: 'الديرمابن', label: 'الديرمابن' },
-    //     { value: 'حقن الفيلر', label: 'حقن الفيلر' },
-    //     { value: 'محفزات الكولاجين', label: 'الديرمابن' },
-    //     { value: 'الفراكشنال', label: 'الفراكشنال' },
-    //     { value: 'التجميل النسائي', label: 'التجميل النسائي' },
-    //     { value: 'الليزر', label: 'الليزر' },
-    //     { value: 'جلسات التشقير', label: 'جلسات التشقير' },
-    //     { value: 'الليزر الكربوني', label: 'الليزر الكربوني' },
-    //     { value: 'إزلة تاتو ونمش ووحمات', label: 'إزلة تاتو ونمش ووحمات' },
-    //     { value: 'أبر البوتكس', label: 'أبر البوتكس' },
-    //     { value: 'المورفيس وسكارليت ', label: 'المورفيس وسكارليت ' },
-    //     { value: 'إبر النضارة', label: 'إبر النضارة' },
-    //     { value: 'البلازما والخلايا الجذعيه', label: 'البلازما والخلايا الجذعيه' },
-    //     { value: 'التقشير البارد', label: 'التقشير البارد' },
-    //     { value: 'الخيوط', label: 'الخيوط' },
-    //     { value: 'إزالة ثأليل', label: 'إزالة ثأليل' },
-    //     { value: 'باقات ليفلز المميزة', label: 'باقات ليفلز المميزة' },
-    //     { value: 'العروض', label: 'العروض' },
-    //     { value: 'هدايا اليوم', label: 'هدايا اليوم' },
-    // ]
-
-    // const optionsEn = [
-    //     { value: 'Ultrformer (HIFU Face Lifting)', label: 'Ultrformer (HIFU Face Lifting)' },
-    //     { value: 'Skin Cleansing & Hydrafacial Services', label: 'Skin Cleansing & Hydrafacial Services' },
-    //     { value: 'Dermapen', label: 'Dermapen' },
-    //     { value: 'Filler Injections', label: 'Filler Injections' },
-    //     { value: 'Collagen Stimulators', label: 'Collagen Stimulators' },
-    //     { value: 'Fractional Laser', label: 'Fractional Laser' },
-    //     { value: 'Female Aesthetic Treatments', label: 'Female Aesthetic Treatments' },
-    //     { value: 'Laser', label: 'Laser' },
-    //     { value: 'Bleaching Sessions', label: 'Bleaching Sessions' },
-    //     { value: 'Carbon Laser', label: 'Carbon Laser' },
-    //     { value: 'Tattoo, Freckles & Birthmark Removal', label: 'Tattoo, Freckles & Birthmark Removal' },
-    //     { value: 'Botox Injections', label: 'Botox Injections' },
-    //     { value: 'Morpheus & Scarlet', label: 'Morpheus & Scarlet' },
-    //     { value: 'Mesotherapy Injections', label: 'Mesotherapy Injections' },
-    //     { value: 'Plasma & Stem Cells', label: 'Plasma & Stem Cells' },
-    //     { value: 'Cold Peeling', label: 'Cold Peeling' },
-    //     { value: 'Threads', label: 'Threads' },
-    //     { value: 'Wart Removal', label: 'Wart Removal' },
-    //     { value: 'Exclusive Levels Packages', label: 'Exclusive Levels Packages' },
-    //     { value: 'Offers', label: 'Offers' },
-    //     { value: 'Today’s Gifts', label: 'Today’s Gifts' },
-    // ]
 
     // get social media
     const getSociaMedia = async() => {
@@ -173,17 +125,17 @@ export default function Form() {
             <div className="row gx-5 py-md-5 py-5 rounded-1 justify-content-between shadow m-0 bg-white">
                 <div className="col-xl-3 col-md-4">
                     <div className='bg-secondary-emphasis position-relative d-md-block d-sm-flex align-items-start justify-content-between pb-md-0 pb-4'>
-                        <Link to={`${socialMedia?.address}`} target='_blank' className='d-flex flex-column align-items-center text-black text-decoration-none'>
+                        <Link to={`${socialMedia?.address}`} target='_blank' className='d-flex px-2 flex-column align-items-center text-black text-decoration-none'>
                             <i className="fa-solid fa-location-dot fs-4 text-main pb-2"></i>
                             <p className='mb-1 fw-semibold text-hover'>{lang==='ar'? 'العنوان':'Address'}</p>
-                            <p className='text-body-tertiary small text-capitalize text-center mb-0'>{socialMedia?.address}</p>
+                            <p className='text-body-tertiary small text-capitalize text-center mb-0'>{lang==='ar'? 'المدينة المنورة – الخالدية – جبار بن صخر':'Al-Madinah Al-Munawwarah – Al-Khalidiyyah – Jabbar Bin Sakhr'}</p>
                         </Link>
-                        <Link to={`tel:${socialMedia?.phone}`} className='d-flex flex-column align-items-center py-md-4 py-sm-0 py-4 text-black text-decoration-none'>
+                        <Link to={`tel:${socialMedia?.phone}`} className='d-flex px-2 flex-column align-items-center py-md-4 py-sm-0 py-4 text-black text-decoration-none'>
                             <i className="fa-solid fa-phone fs-4 text-main pb-2"></i>
                             <p className='mb-1 fw-semibold text-hover'>{lang==='ar'? 'الهاتف':'Phone'}</p>
                             <p dir='ltr' className='text-body-tertiary small mb-0'>{socialMedia?.phone}</p>
                         </Link>
-                        <Link to={`mailto:${socialMedia?.email}`} className='d-flex flex-column align-items-center text-black text-decoration-none'>
+                        <Link to={`mailto:${socialMedia?.email}`} className='d-flex px-2 flex-column align-items-center text-black text-decoration-none'>
                             <i className="fa-solid fa-envelope fs-4 text-main pb-2"></i>
                             <p className='mb-1 fw-semibold text-hover'>{lang==='ar'? 'البريد الإلكتروني':'Email'}</p>
                             <p className='text-body-tertiary small mb-0'>{socialMedia?.email}</p>
@@ -195,7 +147,7 @@ export default function Form() {
                     <div>
                         <div>
                             <p className='fs-5 fw-semibold text-main mb-1'>{lang==='ar'? 'أرسل لنا رسالة':'Send Us Message'}</p>
-                            <p className='text-body-tertiary'>{lang==='ar'? 'نسعى دائمًا لتقديم أفضل الخدمات لضمان رضاكم وتحقيق توقعاتكم بكل دقة واحترافية.':'We always strive to provide the best services to ensure your satisfaction and meet your expectations with precision and professionalism.'}</p>
+                            <p className='text-body-tertiary'>{lang==='ar'? 'في عالم ملئ بالتكرار ، كوني أنتي ، كوني مميزة  ، كوني ':'In a world full of repetition, be yourself, be unique, be '}<span className='fw-medium roboto'>DIVA</span><br />{lang==='ar'? 'مع ليفلز، جمالك لا يعرف حدود':'With Levels, your beauty knows no bounds'}</p>
                         </div>
                         <form key={formKey} onSubmit={formik.handleSubmit}>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} type="text" name="name" placeholder={lang==='ar'? 'أدخل اسمك':'Enter your name'} className='form-control py-2 bg-body-secondary mb-3' />
@@ -227,6 +179,15 @@ export default function Form() {
                         </form>
                     </div>
                 </div>
+            <div className={`w-100 d-flex align-items-center ${lang==='ar'? 'justify-content-sm-start justify-content-center flex-row-reverse':'justify-content-sm-end justify-content-center flex-row'} pt-sm-3 pt-4`}>
+                <Link className='text-decoration-none' target='_blank' to={`https://wa.me/${socialMedia.facebook}`}><i className="fa-brands fa-whatsapp whatsapp scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
+                <Link className='text-decoration-none' target='_blank' to={socialMedia.tiktok}><i className="fa-brands fa-tiktok tiktok scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
+                <Link className='text-decoration-none' target='_blank' to={socialMedia.instagram}><i className="fa-brands fa-instagram instagram scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
+                <Link className='text-decoration-none' target='_blank' to={socialMedia.twitter}><i className="fa-brands fa-snapchat text-black scale text-black d-flex fs-4 pe-3 cursor-pointer"></i></Link>
+                <Link className='text-decoration-none' target='_blank' to={socialMedia.linkedin}><div className='me-sm-3 linktree-w d-flex align-items-center justify-content-center'>
+                    <img loading='lazy' className='w-100 scale cursor-pointer' src={linktree} alt="linktree" />
+                </div></Link>
+            </div>
             </div>
         </div>
     </div>

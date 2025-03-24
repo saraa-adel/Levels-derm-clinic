@@ -84,13 +84,13 @@ export default function SocialMedia() {
     </div>
     :<form onSubmit={formik.handleSubmit}>
         <div className="position-relative social">
-            <input onChange={formik.handleChange} value={formik.values.facebook} id="facebook" type="text" placeholder="Facebook Url" name="facebook" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
-            <i className="fa-brands fa-facebook fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            <input onChange={formik.handleChange} value={formik.values.facebook} id="whatsApp" type="text" placeholder="WhatsApp Number" name="facebook" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
+            <i className="fa-brands fa-whatsapp fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
         </div>
 
         <div className="position-relative social">
-            <input onChange={formik.handleChange} value={formik.values.twitter} id="twitter" type="text" placeholder="Twitter Url" name="twitter" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
-            <i className="fa-brands fa-twitter fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            <input onChange={formik.handleChange} value={formik.values.twitter} id="snapchat" type="text" placeholder="Snapchat Url" name="twitter" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
+            <i className="fa-brands fa-snapchat fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
         </div>
 
         <div className="position-relative social">
@@ -99,8 +99,8 @@ export default function SocialMedia() {
         </div>
 
         <div className="position-relative social">
-            <input onChange={formik.handleChange} value={formik.values.linkedin} id="linkedin" type="text" placeholder="Linkedin Url" name="linkedin" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
-            <i className="fa-brands fa-linkedin fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            <input onChange={formik.handleChange} value={formik.values.linkedin} id="linktree" type="text" placeholder="Linktree Url" name="linkedin" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
+            <i className="fa-solid fa-l fs-4 position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
         </div>
 
         <div className="position-relative social">

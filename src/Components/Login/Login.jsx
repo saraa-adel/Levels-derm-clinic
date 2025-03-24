@@ -68,13 +68,13 @@ export default function Login() {
                             </div>
                             <form onSubmit={formik.handleSubmit} className='mt-4'>
                                 {apiError ?<div className="alert alert-danger">{apiError}</div>:''} 
-                                <div className="position-relative">
+                                <div className="position-relative social">
                                     <input onBlur={formik.handleBlur} onChange={formik.handleChange} id="email" type="email" placeholder="Enter your email" name="email" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
                                     <i className="fa fa-envelope position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
                                 </div>
                                 {formik.errors.email && formik.touched.email?<div className="alert alert-danger py-2">{formik.errors.email}</div>: ''}
                                     
-                                <div className="position-relative">
+                                <div className="position-relative social">
                                     <input onBlur={formik.handleBlur} onChange={formik.handleChange} id="password" type="password" placeholder="Enter your password" name="password" className="form-control py-2 bg-body-secondary mb-3 ps-5" />
                                     <i className="fa fa-lock position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
                                 </div>
