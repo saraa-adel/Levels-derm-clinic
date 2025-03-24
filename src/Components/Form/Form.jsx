@@ -147,7 +147,7 @@ export default function Form() {
                     <div>
                         <div>
                             <p className='fs-5 fw-semibold text-main mb-1'>{lang==='ar'? 'أرسل لنا رسالة':'Send Us Message'}</p>
-                            <p className='text-body-tertiary'>{lang==='ar'? 'في عالم ملئ بالتكرار ، كوني أنتي ، كوني مميزة  ، كوني ':'In a world full of repetition, be yourself, be unique, be '}<span className='fw-medium roboto'>DIVA</span><br /><span className='text-nowrap'>{lang==='ar'? 'مع ليفلز، جمالك لا يعرف حدود':'With Levels, your beauty knows no bounds'}</span></p>
+                            <p className='text-body-tertiary'>{lang==='ar'? 'في عالم ملئ بالتكرار ، كوني أنتي ، كوني مميزة  ، كوني ':'In a world full of repetition, be yourself, be unique, be '}<span className='fw-medium roboto'>DIVA</span><br />{lang==='ar'? 'مع ليفلز، جمالك لا يعرف حدود':'With Levels, your beauty knows no bounds'}</p>
                         </div>
                         <form key={formKey} onSubmit={formik.handleSubmit}>
                             <input onBlur={formik.handleBlur} onChange={formik.handleChange} type="text" name="name" placeholder={lang==='ar'? 'أدخل اسمك':'Enter your name'} className='form-control py-2 bg-body-secondary mb-3' />
